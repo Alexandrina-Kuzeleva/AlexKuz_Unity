@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Laba 1.sln"
+    "dotnet.defaultSolution": "AlexKuz_Unity.sln"
 }
