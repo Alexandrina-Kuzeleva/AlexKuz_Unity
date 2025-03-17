@@ -13,11 +13,13 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer; 
     public int collectibleCount = 0;
     public Text collectibleText;
+    public AudioSource collectSound;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        collectSound = GetComponent<AudioSource>();
         UpdateCollectibleUI();
     }
 
@@ -71,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         {
             collectibleCount++; 
             Destroy(other.gameObject); 
+            collectSound.Play();
             UpdateCollectibleUI();
         }
     }
