@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,25 +11,32 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping;
     public Animator animator;
     public float raycastDistance = 0.2f;
-    public LayerMask groundLayer; 
+    public LayerMask groundLayer;
     public int collectibleCount = 0;
     public Text collectibleText;
     public AudioSource collectSound;
+    public AudioSource jumpSound; // Звук прыжка
+    public AudioSource stepSound; // Звук шагов
+    public AudioMixer mixer; // Ваш Audio Mixer
+
+    // Задержка между звуками шагов
+    private float stepDelay = 0.3f; // Настройте под ваш ритм шагов
+    private float lastStepTime;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        collectSound = GetComponent<AudioSource>();
         UpdateCollectibleUI();
     }
 
     void Update()
     {
-        Move = Input.GetAxis("Horizontal");
+        Move = Input.GetAxisRaw("Horizontal"); // Используем GetAxisRaw для более точного ввода
         rb.linearVelocity = new Vector2(speed * Move, rb.linearVelocity.y);
         animator.SetBool("IsRunning", Move != 0);
 
+        // Прыжок
         if (Input.GetButtonDown("Jump"))
         {
             if (IsGrounded())
@@ -36,15 +44,36 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(new Vector2(rb.linearVelocity.x, jump));
                 isJumping = true;
                 animator.SetBool("IsJumping", true);
+                if (jumpSound != null)
+                {
+                    jumpSound.Play();
+                }
             }
         }
 
+        // Проверка приземления
         if (IsGrounded() && isJumping)
         {
             isJumping = false;
             animator.SetBool("IsJumping", false);
         }
 
+        // Управление звуком шагов
+        if (IsGrounded() && Mathf.Abs(Move) > 0.1f && Time.time - lastStepTime > stepDelay)
+        {
+            if (stepSound != null)
+            {
+                stepSound.Play();
+                lastStepTime = Time.time;
+            }
+        }
+        else if (stepSound != null && stepSound.isPlaying && (Mathf.Abs(Move) <= 0.1f || !IsGrounded()))
+        {
+            // Останавливаем звук шагов, если игрок стоит или в воздухе
+            stepSound.Stop();
+        }
+
+        // Поворот персонажа
         if (Move > 0)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
@@ -62,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
         if (hit.collider != null)
         {
             float angle = Vector2.Angle(hit.normal, Vector2.up);
-            return angle < 45f; 
+            return angle < 45f;
         }
         return false;
     }
@@ -71,9 +100,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("Collectible"))
         {
-            collectibleCount++; 
-            Destroy(other.gameObject); 
-            collectSound.Play();
+            collectibleCount++;
+            Destroy(other.gameObject);
+            if (collectSound != null)
+            {
+                collectSound.Play();
+            }
             UpdateCollectibleUI();
         }
     }
@@ -86,12 +118,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void UpdateCollectibleUI()
+    {
+        if (collectibleText != null)
         {
-            if (collectibleText != null)
-            {
-                collectibleText.text = "Count: " + collectibleCount;
-            }
+            collectibleText.text = "Count: " + collectibleCount;
+        }
     }
 }
-
-    
