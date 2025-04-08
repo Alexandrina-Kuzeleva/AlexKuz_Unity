@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,6 +20,12 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource stepSound; // Звук шагов
     public AudioMixer mixer; // Ваш Audio Mixer
 
+    // Для выстрела
+    public GameObject bulletPrefab; // Префаб пули
+    public Transform firePoint; // Точка, откуда стреляет пуля
+    public float fireRate = 0.5f; // Задержка между выстрелами (в секундах)
+    private bool canShoot = true; // Флаг для контроля задержки
+
     // Задержка между звуками шагов
     private float stepDelay = 0.3f; // Настройте под ваш ритм шагов
     private float lastStepTime;
@@ -32,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Move = Input.GetAxisRaw("Horizontal"); // Используем GetAxisRaw для более точного ввода
+        Move = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(speed * Move, rb.linearVelocity.y);
         animator.SetBool("IsRunning", Move != 0);
 
@@ -49,6 +56,12 @@ public class PlayerMovement : MonoBehaviour
                     jumpSound.Play();
                 }
             }
+        }
+
+        // Выстрел
+        if (Input.GetKeyDown(KeyCode.E) && canShoot)
+        {
+            StartCoroutine(Shoot());
         }
 
         // Проверка приземления
@@ -69,7 +82,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (stepSound != null && stepSound.isPlaying && (Mathf.Abs(Move) <= 0.1f || !IsGrounded()))
         {
-            // Останавливаем звук шагов, если игрок стоит или в воздухе
             stepSound.Stop();
         }
 
@@ -107,6 +119,60 @@ public class PlayerMovement : MonoBehaviour
                 collectSound.Play();
             }
             UpdateCollectibleUI();
+            StartCoroutine(FadeMusic());
+        }
+    }
+
+    // Корутина для выстрела с задержкой
+    private IEnumerator Shoot()
+{
+    canShoot = false;
+
+    // Создаём пулю
+    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    Bullet bulletScript = bullet.GetComponent<Bullet>();
+
+    // Устанавливаем направление пули в зависимости от направления игрока
+    if (transform.localScale.x < 0)
+    {
+        bullet.transform.Rotate(0, 180, 0); // Поворачиваем пулю, если игрок смотрит влево
+    }
+
+    // Ждём задержку перед следующим выстрелом
+    yield return new WaitForSeconds(fireRate);
+    canShoot = true;
+}
+
+    // Плавное приглушение и восстановление фоновой музыки
+    private System.Collections.IEnumerator FadeMusic()
+    {
+        if (mixer == null)
+        {
+            yield break;
+        }
+
+        float fadeTime = 0.5f;
+        float targetVolume = -20f;
+        float originalVolume = 0f;
+
+        float currentTime = 0f;
+        while (currentTime < fadeTime)
+        {
+            currentTime += Time.deltaTime;
+            float newVolume = Mathf.Lerp(originalVolume, targetVolume, currentTime / fadeTime);
+            mixer.SetFloat("BackgroundMusicVolume", newVolume);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        currentTime = 0f;
+        while (currentTime < fadeTime)
+        {
+            currentTime += Time.deltaTime;
+            float newVolume = Mathf.Lerp(targetVolume, originalVolume, currentTime / fadeTime);
+            mixer.SetFloat("BackgroundMusicVolume", newVolume);
+            yield return null;
         }
     }
 

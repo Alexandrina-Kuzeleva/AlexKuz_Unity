@@ -5,28 +5,26 @@ using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pausePanel; // Панель меню паузы
-    public AudioMixer musicMixer; // Микшер для музыки
-    public AudioMixer sfxMixer; // Микшер для звуков (SFX)
-    public Slider musicVolumeSlider; // Слайдер для громкости музыки
-    public Slider sfxVolumeSlider; // Слайдер для громкости звуков
+    public GameObject pausePanel;
+    public AudioMixer musicMixer;
+    public AudioMixer sfxMixer;
+    public Slider musicVolumeSlider;
+    public Slider sfxVolumeSlider;
+    public TextMeshProUGUI musicVolumeText; // Текст для отображения громкости музыки
+    public TextMeshProUGUI sfxVolumeText; // Текст для отображения громкости звуков
     private bool isPaused = false;
 
     void Start()
     {
-        // Убедимся, что панель изначально выключена
         if (pausePanel != null)
         {
             pausePanel.SetActive(false);
         }
-
-        // Настраиваем слайдеры
         SetupSliders();
     }
 
     void Update()
     {
-        // Открытие/закрытие меню паузы по клавише Esc
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -40,77 +38,88 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    // Настройка начальных значений слайдеров
     private void SetupSliders()
     {
-        // Устанавливаем начальные значения слайдеров на основе текущей громкости
         if (musicMixer != null && musicVolumeSlider != null)
         {
             float musicVolume;
             musicMixer.GetFloat("BackgroundMusicVolume", out musicVolume);
-            musicVolumeSlider.value = Mathf.Pow(10, musicVolume / 20); // Преобразуем dB в линейное значение
+            musicVolumeSlider.value = Mathf.Pow(10, musicVolume / 20);
             musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
+            UpdateMusicVolumeText(musicVolumeSlider.value);
         }
 
         if (sfxMixer != null && sfxVolumeSlider != null)
         {
             float sfxVolume;
             sfxMixer.GetFloat("SFXVolume", out sfxVolume);
-            sfxVolumeSlider.value = Mathf.Pow(10, sfxVolume / 20); // Преобразуем dB в линейное значение
+            sfxVolumeSlider.value = Mathf.Pow(10, sfxVolume / 20);
             sfxVolumeSlider.onValueChanged.AddListener(SetSFXVolume);
+            UpdateSFXVolumeText(sfxVolumeSlider.value);
         }
     }
 
-    // Установка громкости музыки
     public void SetMusicVolume(float volume)
     {
         if (musicMixer != null)
         {
-            // Преобразуем линейное значение слайдера (0-1) в dB (-80 до 0)
             float dB = volume > 0 ? 20 * Mathf.Log10(volume) : -80f;
             musicMixer.SetFloat("BackgroundMusicVolume", dB);
+            UpdateMusicVolumeText(volume);
         }
     }
 
-    // Установка громкости звуков
     public void SetSFXVolume(float volume)
     {
         if (sfxMixer != null)
         {
-            // Преобразуем линейное значение слайдера (0-1) в dB (-80 до 0)
             float dB = volume > 0 ? 20 * Mathf.Log10(volume) : -80f;
             sfxMixer.SetFloat("SFXVolume", dB);
+            UpdateSFXVolumeText(volume);
         }
     }
 
-    // Пауза игры
+    private void UpdateMusicVolumeText(float volume)
+    {
+        if (musicVolumeText != null)
+        {
+            musicVolumeText.text = $"Music Volume: {(int)(volume * 100)}%";
+        }
+    }
+
+    private void UpdateSFXVolumeText(float volume)
+    {
+        if (sfxVolumeText != null)
+        {
+            sfxVolumeText.text = $"SFX Volume: {(int)(volume * 100)}%";
+        }
+    }
+
     public void PauseGame()
     {
         isPaused = true;
-        Time.timeScale = 0f; // Останавливаем время в игре
+        Time.timeScale = 0f;
         if (pausePanel != null)
         {
             pausePanel.SetActive(true);
         }
     }
 
-    // Возврат в игру
     public void ResumeGame()
     {
         isPaused = false;
-        Time.timeScale = 1f; // Возобновляем время
+        Time.timeScale = 1f;
         if (pausePanel != null)
         {
             pausePanel.SetActive(false);
         }
     }
 
-    // Выход из игры
     public void QuitGame()
     {
         Application.Quit();
         #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false; // Для тестирования в редакторе
+        UnityEditor.EditorApplication.isPlaying = false;
         #endif
     }
 }
