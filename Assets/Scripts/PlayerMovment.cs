@@ -16,24 +16,28 @@ public class PlayerMovement : MonoBehaviour
     public int collectibleCount = 0;
     public Text collectibleText;
     public AudioSource collectSound;
-    public AudioSource jumpSound; // Звук прыжка
-    public AudioSource stepSound; // Звук шагов
-    public AudioMixer mixer; // Ваш Audio Mixer
+    public AudioSource jumpSound;
+    public AudioSource stepSound;
+    public AudioMixer mixer;
 
     // Для выстрела
-    public GameObject bulletPrefab; // Префаб пули
-    public Transform firePoint; // Точка, откуда стреляет пуля
-    public float fireRate = 0.5f; // Задержка между выстрелами (в секундах)
-    private bool canShoot = true; // Флаг для контроля задержки
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    public float fireRate = 0.5f;
+    private bool canShoot = true;
 
     // Задержка между звуками шагов
-    private float stepDelay = 0.3f; // Настройте под ваш ритм шагов
+    private float stepDelay = 0.3f;
     private float lastStepTime;
+
+    // Ссылка на систему здоровья
+    private HealthSystem healthSystem;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        healthSystem = GetComponent<HealthSystem>(); // Получаем компонент HealthSystem
         UpdateCollectibleUI();
     }
 
@@ -123,28 +127,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // Корутина для выстрела с задержкой
     private IEnumerator Shoot()
-{
-    canShoot = false;
-
-    // Создаём пулю
-    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-    Bullet bulletScript = bullet.GetComponent<Bullet>();
-
-    // Устанавливаем направление пули в зависимости от направления игрока
-    if (transform.localScale.x < 0)
     {
-        bullet.transform.Rotate(0, 180, 0); // Поворачиваем пулю, если игрок смотрит влево
+        canShoot = false;
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        yield return new WaitForSeconds(fireRate);
+        canShoot = true;
     }
 
-    // Ждём задержку перед следующим выстрелом
-    yield return new WaitForSeconds(fireRate);
-    canShoot = true;
-}
-
-    // Плавное приглушение и восстановление фоновой музыки
-    private System.Collections.IEnumerator FadeMusic()
+    private IEnumerator FadeMusic()
     {
         if (mixer == null)
         {
