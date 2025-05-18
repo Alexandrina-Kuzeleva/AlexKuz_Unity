@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform firePoint;
     public float fireRate = 0.5f;
     private bool canShoot = true;
-
+    private float nextFireTime;
     // Задержка между звуками шагов
     private float stepDelay = 0.3f;
     private float lastStepTime;
@@ -63,9 +63,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Выстрел
-        if (Input.GetKeyDown(KeyCode.E) && canShoot)
+        if (Input.GetKeyDown(KeyCode.F) && canShoot && Time.time >= nextFireTime)
         {
             StartCoroutine(Shoot());
+            nextFireTime = Time.time + fireRate;
         }
 
         // Проверка приземления
@@ -130,7 +131,17 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator Shoot()
     {
         canShoot = false;
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        if (bulletPrefab != null && firePoint != null)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Bullet bulletScript = bullet.GetComponent<Bullet>();
+            if (bulletScript != null)
+            {
+                // Устанавливаем направление через метод
+                float direction = transform.localScale.x > 0 ? 1 : -1;
+                bulletScript.SetDirection(new Vector2(direction, 0));
+            }
+        }
         yield return new WaitForSeconds(fireRate);
         canShoot = true;
     }

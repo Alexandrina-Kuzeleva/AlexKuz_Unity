@@ -8,6 +8,8 @@ TagManager:
   - Cube
   - Collectible
   - Trap
+  - Portal
+  - Enemy
   layers:
   - Default
   - TransparentFX
