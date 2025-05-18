@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Croco_0: -7230334446005180618
+      Croco_1: -4295562863192682843
+      Croco_2: -7385089937389570897
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -193,7 +193,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.29112178}
+  m_Offset: {x: 0, y: 0.094690025}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -203,7 +203,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.6977564}
+  m_Size: {x: 1.28, y: 1.46938}
   m_EdgeRadius: 0
 --- !u!114 &9024192
 MonoBehaviour:
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &9024193
 Animator:
   serializedVersion: 7
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -384,7 +384,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.2796448}
+  m_Offset: {x: 0, y: 0.10292286}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -394,7 +394,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.7207104}
+  m_Size: {x: 1.28, y: 1.4858457}
   m_EdgeRadius: 0
 --- !u!114 &12643604
 MonoBehaviour:
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &12643605
 Animator:
   serializedVersion: 7
@@ -773,7 +773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -812,7 +812,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.27964526}
+  m_Offset: {x: 0, y: 0.10924572}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -822,7 +822,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.72070944}
+  m_Size: {x: 1.28, y: 1.4984914}
   m_EdgeRadius: 0
 --- !u!114 &78128120
 MonoBehaviour:
@@ -836,7 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &78128121
 Animator:
   serializedVersion: 7
@@ -1097,7 +1097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -1136,7 +1136,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.2796448}
+  m_Offset: {x: 0, y: 0.0807907}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1146,7 +1146,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.7207104}
+  m_Size: {x: 1.28, y: 1.4415814}
   m_EdgeRadius: 0
 --- !u!114 &157405945
 MonoBehaviour:
@@ -1160,7 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &157405946
 Animator:
   serializedVersion: 7
@@ -1435,7 +1435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -1474,7 +1474,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.2796448}
+  m_Offset: {x: 0, y: 0.16615695}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1484,7 +1484,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.7207104}
+  m_Size: {x: 1.28, y: 1.6123139}
   m_EdgeRadius: 0
 --- !u!114 &185343943
 MonoBehaviour:
@@ -1498,7 +1498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &185343944
 Animator:
   serializedVersion: 7
@@ -1701,7 +1701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -1740,7 +1740,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.30082542}
+  m_Offset: {x: 0, y: 0.09092206}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1750,7 +1750,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.67834914}
+  m_Size: {x: 1.28, y: 1.4618441}
   m_EdgeRadius: 0
 --- !u!114 &311555308
 MonoBehaviour:
@@ -1764,7 +1764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &311555309
 Animator:
   serializedVersion: 7
@@ -1892,7 +1892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -1931,7 +1931,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.2814179}
+  m_Offset: {x: 0, y: 0.06878084}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1941,7 +1941,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.71716416}
+  m_Size: {x: 1.28, y: 1.4175617}
   m_EdgeRadius: 0
 --- !u!114 &358638130
 MonoBehaviour:
@@ -1955,7 +1955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &358638131
 Animator:
   serializedVersion: 7
@@ -2083,7 +2083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -2122,7 +2122,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.2912963}
+  m_Offset: {x: 0, y: 0.06913918}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2132,7 +2132,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.69740736}
+  m_Size: {x: 1.28, y: 1.4182783}
   m_EdgeRadius: 0
 --- !u!114 &380077299
 MonoBehaviour:
@@ -2146,7 +2146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &380077300
 Animator:
   serializedVersion: 7
@@ -2489,7 +2489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -2528,7 +2528,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.29129678}
+  m_Offset: {x: 0, y: -0.009904444}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2538,7 +2538,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.6974064}
+  m_Size: {x: 1.28, y: 1.2601911}
   m_EdgeRadius: 0
 --- !u!114 &504230923
 MonoBehaviour:
@@ -2552,7 +2552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &504230924
 Animator:
   serializedVersion: 7
@@ -8440,7 +8440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -8479,7 +8479,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.29129666}
+  m_Offset: {x: 0, y: 0.0027427077}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8489,7 +8489,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.69740665}
+  m_Size: {x: 1.28, y: 1.2854854}
   m_EdgeRadius: 0
 --- !u!114 &540630926
 MonoBehaviour:
@@ -8503,7 +8503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &540630927
 Animator:
   serializedVersion: 7
@@ -9800,7 +9800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -9839,7 +9839,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.26799256}
+  m_Offset: {x: 0, y: 0.08611959}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9849,7 +9849,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.74401486}
+  m_Size: {x: 1.28, y: 1.4522392}
   m_EdgeRadius: 0
 --- !u!114 &1110049804
 MonoBehaviour:
@@ -9863,7 +9863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &1110049805
 Animator:
   serializedVersion: 7
@@ -10016,7 +10016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 50
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -10419,7 +10419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -10458,7 +10458,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.26799327}
+  m_Offset: {x: 0, y: 0.03869313}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10468,7 +10468,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.7440134}
+  m_Size: {x: 1.28, y: 1.3573862}
   m_EdgeRadius: 0
 --- !u!114 &1180516843
 MonoBehaviour:
@@ -10482,7 +10482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &1180516844
 Animator:
   serializedVersion: 7
@@ -10685,7 +10685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -10724,7 +10724,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0039744377, y: -0.26772046}
+  m_Offset: {x: -0.0039744377, y: -0.0052980185}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10734,7 +10734,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.2005053, y: 0.6809621}
+  m_Size: {x: 1.2005053, y: 1.205807}
   m_EdgeRadius: 0
 --- !u!114 &1244972382
 MonoBehaviour:
@@ -10748,7 +10748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &1244972383
 Animator:
   serializedVersion: 7
@@ -11005,7 +11005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -11044,7 +11044,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.2563408}
+  m_Offset: {x: 0, y: 0.062992275}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11054,7 +11054,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.76731837}
+  m_Size: {x: 1.28, y: 1.4059845}
   m_EdgeRadius: 0
 --- !u!114 &1284763559
 MonoBehaviour:
@@ -11068,7 +11068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &1284763560
 Animator:
   serializedVersion: 7
@@ -11587,7 +11587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -11626,7 +11626,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.256342}
+  m_Offset: {x: 0, y: 0.056667984}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11636,7 +11636,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.767316}
+  m_Size: {x: 1.28, y: 1.3933359}
   m_EdgeRadius: 0
 --- !u!114 &1425276519
 MonoBehaviour:
@@ -11650,7 +11650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &1425276520
 Animator:
   serializedVersion: 7
@@ -12058,7 +12058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1421604675}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -12097,7 +12097,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.2796448}
+  m_Offset: {x: 0, y: 0.071305454}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -12107,7 +12107,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.7207104}
+  m_Size: {x: 1.28, y: 1.4226109}
   m_EdgeRadius: 0
 --- !u!114 &1577208460
 MonoBehaviour:
@@ -12121,7 +12121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dd2a27ac64ede48b925f7402acebd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 24126635}
 --- !u!95 &1577208461
 Animator:
   serializedVersion: 7

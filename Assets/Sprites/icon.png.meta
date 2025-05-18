@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 1fe9d0513277c9f43bbf056b071e1e7c
+guid: fec6bbbce8cfbc543ad5da73b7ed2cd6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4678236342818476205
-    second: ChillGuy_0
-  - first:
-      213: 7505876873042716644
-    second: ChillGuy_1
-  - first:
-      213: -8660205480570633945
-    second: ChillGuy_2
+      213: 6934086728263231946
+    second: icon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChillGuy_0
+      name: icon_0
       rect:
         serializedVersion: 2
-        x: 63
+        x: 0
         y: 0
-        width: 738
-        height: 1024
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,52 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 35f6bf225d0931fb0800000000000000
-      internalID: -4678236342818476205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ChillGuy_1
-      rect:
-        serializedVersion: 2
-        x: 1087
-        y: 0
-        width: 738
-        height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4e7e7898f3b3a2860800000000000000
-      internalID: 7505876873042716644
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ChillGuy_2
-      rect:
-        serializedVersion: 2
-        x: 2111
-        y: 63
-        width: 738
-        height: 961
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 72142b8cff4c0d780800000000000000
-      internalID: -8660205480570633945
+      spriteID: ac961e71423da3060800000000000000
+      internalID: 6934086728263231946
       vertices: []
       indices: 
       edges: []
@@ -198,9 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ChillGuy_0: -4678236342818476205
-      ChillGuy_1: 7505876873042716644
-      ChillGuy_2: -8660205480570633945
+      icon_0: 6934086728263231946
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

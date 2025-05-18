@@ -1224,7 +1224,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: afd6fae09b9c449479b1f684567f998a, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SetMusicVolume
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &286575579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,7 +1303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 2136234854}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -1330,7 +1342,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.2021597}
+  m_Offset: {x: 0, y: 0.012974918}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1340,7 +1352,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.87568057}
+  m_Size: {x: 1.28, y: 1.3059498}
   m_EdgeRadius: 0
 --- !u!114 &324806003
 MonoBehaviour:
@@ -1491,7 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b790b1e4bd5204cb518e2884b84697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingScreen: {fileID: 245928542}
+  loadingScreen: {fileID: 0}
   fadeDuration: 1
 --- !u!1 &399076717
 GameObject:
@@ -1649,7 +1661,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &410172982
 RectTransform:
@@ -2238,7 +2250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 50
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 2136234854}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -2444,7 +2456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 2136234854}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -4539,7 +4551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 2136234854}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -4578,7 +4590,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.23585302}
+  m_Offset: {x: 0, y: 0.03223723}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4588,7 +4600,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.80829394}
+  m_Size: {x: 1.28, y: 1.3444744}
   m_EdgeRadius: 0
 --- !u!114 &1248016451
 MonoBehaviour:
@@ -10475,7 +10487,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: afd6fae09b9c449479b1f684567f998a, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SetSFXVolume
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1483377671 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 215255355530131227, guid: c166fda84bb9c0148a13a64091228160, type: 3}
@@ -10691,7 +10715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 2136234854}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -10730,7 +10754,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0039744377, y: -0.27301133}
+  m_Offset: {x: -0.0039744377, y: -0.084355235}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10740,7 +10764,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.2005053, y: 0.67038035}
+  m_Size: {x: 1.2005053, y: 1.0476925}
   m_EdgeRadius: 0
 --- !u!114 &1520123193
 MonoBehaviour:
@@ -11897,7 +11921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 2136234854}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -11936,7 +11960,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.22462255}
+  m_Offset: {x: 0, y: 0.013679683}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11946,7 +11970,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.8307549}
+  m_Size: {x: 1.28, y: 1.3073593}
   m_EdgeRadius: 0
 --- !u!114 &1788146994
 MonoBehaviour:
@@ -12726,7 +12750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 2136234854}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -12765,7 +12789,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.2246216}
+  m_Offset: {x: 0, y: 0.050088584}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -12775,7 +12799,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.8307568}
+  m_Size: {x: 1.28, y: 1.3801771}
   m_EdgeRadius: 0
 --- !u!114 &1897087959
 MonoBehaviour:
@@ -12917,7 +12941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 2136234854}
   isPlayer: 0
   flashDuration: 0.5
   flashCount: 3
@@ -12956,7 +12980,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0039744377, y: -0.20146656}
+  m_Offset: {x: -0.0039744377, y: -0.02273941}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -12966,7 +12990,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.2005053, y: 0.8134699}
+  m_Size: {x: 1.2005053, y: 1.1709242}
   m_EdgeRadius: 0
 --- !u!114 &1995592405
 MonoBehaviour:
@@ -13504,11 +13528,11 @@ PrefabInstance:
       objectReference: {fileID: 2136234854}
     - target: {fileID: 1587191872101295851, guid: c166fda84bb9c0148a13a64091228160, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.68
+      value: -9.38
       objectReference: {fileID: 0}
     - target: {fileID: 1587191872101295851, guid: c166fda84bb9c0148a13a64091228160, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.03
+      value: -1.99
       objectReference: {fileID: 0}
     - target: {fileID: 1587191872101295851, guid: c166fda84bb9c0148a13a64091228160, type: 3}
       propertyPath: m_LocalPosition.z

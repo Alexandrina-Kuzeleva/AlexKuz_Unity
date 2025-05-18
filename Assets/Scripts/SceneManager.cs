@@ -6,7 +6,7 @@ public class SceneManager : MonoBehaviour
 {
     public static SceneManager Instance { get; private set; }
     public CanvasGroup loadingScreen; // Панель для эффекта загрузки
-    public float fadeDuration = 1f; // Длительность затухания
+    public float fadeDuration = 2f; // Длительность затухания
 
     private void Awake()
     {
