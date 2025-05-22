@@ -13,19 +13,13 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public float raycastDistance = 0.2f;
     public LayerMask groundLayer;
-    public int collectibleCount = 0;
+    public static int collectibleCount = 0;
     public Text collectibleText;
     public AudioSource collectSound;
     public AudioSource jumpSound;
     public AudioSource stepSound;
     public AudioMixer mixer;
 
-    // Для выстрела
-    public GameObject bulletPrefab;
-    public Transform firePoint;
-    public float fireRate = 0.5f;
-    private bool canShoot = true;
-    private float nextFireTime;
     // Задержка между звуками шагов
     private float stepDelay = 0.3f;
     private float lastStepTime;
@@ -60,13 +54,6 @@ public class PlayerMovement : MonoBehaviour
                     jumpSound.Play();
                 }
             }
-        }
-
-        // Выстрел
-        if (Input.GetKeyDown(KeyCode.F) && canShoot && Time.time >= nextFireTime)
-        {
-            StartCoroutine(Shoot());
-            nextFireTime = Time.time + fireRate;
         }
 
         // Проверка приземления
@@ -128,24 +115,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private IEnumerator Shoot()
-    {
-        canShoot = false;
-        if (bulletPrefab != null && firePoint != null)
-        {
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            Bullet bulletScript = bullet.GetComponent<Bullet>();
-            if (bulletScript != null)
-            {
-                // Устанавливаем направление через метод
-                float direction = transform.localScale.x > 0 ? 1 : -1;
-                bulletScript.SetDirection(new Vector2(direction, 0));
-            }
-        }
-        yield return new WaitForSeconds(fireRate);
-        canShoot = true;
-    }
-
     private IEnumerator FadeMusic()
     {
         if (mixer == null)
@@ -185,11 +154,19 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawRay(rayStart, Vector2.down * raycastDistance);
     }
 
-    void UpdateCollectibleUI()
+    public void UpdateCollectibleUI()
     {
         if (collectibleText != null)
         {
             collectibleText.text = "Count: " + collectibleCount;
         }
+    }
+
+    public void ResetPlayerState()
+    {
+        isJumping = false;
+        rb.linearVelocity = Vector2.zero; // Сбрасываем скорость
+        animator.SetBool("IsJumping", false);
+        animator.SetBool("IsRunning", false);
     }
 }

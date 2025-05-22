@@ -13,6 +13,8 @@ public class PauseMenu : MonoBehaviour
     public TextMeshProUGUI musicVolumeText; // Текст для отображения громкости музыки
     public TextMeshProUGUI sfxVolumeText; // Текст для отображения громкости звуков
     private bool isPaused = false;
+    public GameObject player; 
+    int score = PlayerMovement.collectibleCount;
 
     void Start()
     {
@@ -36,6 +38,20 @@ public class PauseMenu : MonoBehaviour
                 PauseGame();
             }
         }
+    }
+
+    public void SaveGame()
+    {
+        SaveData data = new SaveData
+        {
+            score = score,
+            checkpointX = player.transform.position.x,
+            checkpointY = player.transform.position.y,
+            checkpointZ = player.transform.position.z,
+            sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
+        };
+
+        SaveSystemJSON.Save(data);
     }
 
     private void SetupSliders()
@@ -105,6 +121,11 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void MainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("StartMenu");
+    }
+
     public void ResumeGame()
     {
         isPaused = false;
@@ -122,4 +143,5 @@ public class PauseMenu : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
     }
+    
 }

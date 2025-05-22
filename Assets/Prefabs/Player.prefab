@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1269242095778970568}
   - component: {fileID: 227776071387437443}
   - component: {fileID: 3783228647891499466}
+  - component: {fileID: -5756404062105934139}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -215,9 +216,6 @@ MonoBehaviour:
   jumpSound: {fileID: 0}
   stepSound: {fileID: 0}
   mixer: {fileID: 24100000, guid: ec615ab67cc8b1c49b8527c2397e3daa, type: 2}
-  bulletPrefab: {fileID: 1824852858748615758, guid: 54bf1ad85bed5854bb47704388726da7, type: 3}
-  firePoint: {fileID: 1694312826769517209}
-  fireRate: 0.5
 --- !u!82 &1269242095778970568
 AudioSource:
   m_ObjectHideFlags: 0
@@ -347,6 +345,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 215255355530131227}
+--- !u!114 &-5756404062105934139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215255355530131227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec7a6c0bd044a5418a6354fde78d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1824852858748615758, guid: 54bf1ad85bed5854bb47704388726da7, type: 3}
+  firePoint: {fileID: 0}
+  bulletSpeed: 10
+  fireRate: 0.5
 --- !u!1 &7425782049214156237
 GameObject:
   m_ObjectHideFlags: 0

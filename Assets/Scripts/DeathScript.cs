@@ -7,7 +7,7 @@ public class DeathScript : MonoBehaviour
     private HealthSystem healthSystem; // Ссылка на систему здоровья игрока
 
     // Для урона от ловушек при длительном контакте
-    private float damageInterval = 0.5f; // Интервал нанесения урона (в секундах)
+    private float damageInterval = 0.1f; // Интервал нанесения урона (в секундах)
     private float lastDamageTime; // Время последнего нанесения урона
     private bool isOnTrap; // Флаг, находится ли игрок на ловушке
 
@@ -31,8 +31,8 @@ public class DeathScript : MonoBehaviour
             {
                 healthSystem.TakeDamage(20f); // Начальный урон от ловушки
                 isOnTrap = true; // Игрок вступил на ловушку
+                Debug.Log("Is trap");
             }
-            // Урон от врагов обрабатывается в CrocodileEnemy
         }
     }
 
