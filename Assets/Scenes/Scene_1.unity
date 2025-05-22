@@ -1707,6 +1707,7 @@ MonoBehaviour:
   sfxVolumeSlider: {fileID: 1462294950}
   musicVolumeText: {fileID: 416123596}
   sfxVolumeText: {fileID: 23973259}
+  isPaused: 0
   player: {fileID: 1483377671}
 --- !u!1 &416123594
 GameObject:
@@ -10877,6 +10878,7 @@ MonoBehaviour:
   firePointObject: {fileID: 208771446}
   bulletSpeed: 10
   fireRate: 0
+  spawnOffset: 0.5
 --- !u!1 &1501111901
 GameObject:
   m_ObjectHideFlags: 0
@@ -14214,6 +14216,10 @@ PrefabInstance:
       propertyPath: stepSound
       value: 
       objectReference: {fileID: 1816148781}
+    - target: {fileID: 7345167730295045155, guid: c166fda84bb9c0148a13a64091228160, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1824852858748615758, guid: 54bf1ad85bed5854bb47704388726da7, type: 3}
     - target: {fileID: 7345167730295045155, guid: c166fda84bb9c0148a13a64091228160, type: 3}
       propertyPath: collectibleText
       value: 

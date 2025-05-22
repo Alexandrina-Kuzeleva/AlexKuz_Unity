@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
     public Slider sfxVolumeSlider;
     public TextMeshProUGUI musicVolumeText; // Текст для отображения громкости музыки
     public TextMeshProUGUI sfxVolumeText; // Текст для отображения громкости звуков
-    private bool isPaused = false;
+    public bool isPaused = false;
     public GameObject player; 
     int score = PlayerMovement.collectibleCount;
 
@@ -22,6 +22,8 @@ public class PauseMenu : MonoBehaviour
         {
             pausePanel.SetActive(false);
         }
+        isPaused = false;
+        Time.timeScale = 1f;
         SetupSliders();
     }
 
@@ -123,6 +125,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        Time.timeScale = 1f;
         UnityEngine.SceneManagement.SceneManager.LoadScene("StartMenu");
     }
 

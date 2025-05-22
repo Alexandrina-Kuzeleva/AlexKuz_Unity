@@ -2,6 +2,17 @@ using UnityEngine;
 
 public class PlayerRestore : MonoBehaviour
 {
+    private PauseMenu pauseMenu;
+
+    void Awake()
+    {
+        pauseMenu = FindObjectOfType<PauseMenu>();
+        if (pauseMenu == null)
+        {
+            Debug.LogError("PauseMenu not found!");
+        }
+    }
+
     void Start()
     {
         SaveData data = SaveSystemJSON.Load();
@@ -14,34 +25,44 @@ public class PlayerRestore : MonoBehaviour
 
             if (rb != null)
             {
-                // Устанавливаем позицию через Rigidbody2D
-                rb.MovePosition(new Vector2(data.checkpointX, data.checkpointY));
-                rb.linearVelocity = Vector2.zero; // Сбрасываем скорость
+                transform.position = new Vector3(data.checkpointX, data.checkpointY, data.checkpointZ);
+                rb.linearVelocity = Vector2.zero;
+                rb.constraints = RigidbodyConstraints2D.None; // Сбрасываем ограничения
+                rb.isKinematic = false; // Убедимся, что Rigidbody2D не кинематический
+                rb.simulated = true; // Убедимся, что физика активна
             }
             else
             {
-                // Запасной вариант, если Rigidbody2D отсутствует
                 transform.position = new Vector3(data.checkpointX, data.checkpointY, data.checkpointZ);
             }
 
             if (playerMovement != null)
             {
-                // Устанавливаем счет
                 PlayerMovement.collectibleCount = data.score;
                 playerMovement.UpdateCollectibleUI();
-
-                // Сбрасываем состояние движения
                 playerMovement.ResetPlayerState();
+                playerMovement.enabled = true; // Убедимся, что компонент активен
             }
 
             if (animator != null)
             {
-                // Сбрасываем параметры анимации
                 animator.SetBool("IsJumping", false);
                 animator.SetBool("IsRunning", false);
+                animator.enabled = true; // Убедимся, что аниматор активен
             }
 
+            if (pauseMenu != null)
+            {
+                pauseMenu.ResumeGame(); // Вызываем ResumeGame для полной синхронизации
+                Time.timeScale = 1f; // Дополнительно убеждаемся, что время не на паузе
+            }
+
+            playerMovement.speed = 5f;
+            playerMovement.jump = 300f;
+            playerMovement.raycastDistance = 0.2f;
+
             Debug.Log($"Player restored at position: ({data.checkpointX}, {data.checkpointY}), score: {data.score}");
+            Debug.Log($"Time.timeScale: {Time.timeScale}, PauseMenu.isPaused: {pauseMenu.isPaused}, PlayerMovement enabled: {playerMovement.enabled}, Rigidbody simulated: {rb.simulated}");
         }
         else
         {

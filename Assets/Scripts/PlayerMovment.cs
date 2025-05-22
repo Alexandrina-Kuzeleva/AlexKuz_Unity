@@ -123,8 +123,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
         float fadeTime = 0.5f;
-        float targetVolume = -20f;
-        float originalVolume = 0f;
+        float targetVolume = -20f; // Уменьшаем до 10% громкости
+
+        // Получаем текущее значение громкости из AudioMixer
+        float currentVolume;
+        mixer.GetFloat("BackgroundMusicVolume", out currentVolume);
+
+        float originalVolume = currentVolume; // Сохраняем текущее значение как исходное
 
         float currentTime = 0f;
         while (currentTime < fadeTime)
